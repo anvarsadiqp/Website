@@ -1,0 +1,260 @@
+
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 13px;
+	color:#000000;
+	background-color:#0000CC;
+}
+
+body, th, td, input, textarea, select, option {
+	font-family:"Times New Roman", Times, serif;
+}
+
+h1, h2, h3 {
+	text-transform: lowercase;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	color:#990000;
+}
+
+h1 {
+	letter-spacing: -2px;
+	font-size: 3em;
+}
+
+h2 {
+	letter-spacing: -1px;
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1em;
+}
+
+p, ul, ol {
+	line-height: 200%;
+}
+
+blockquote {
+	padding-left: 1em;
+}
+
+blockquote p, blockquote ul, blockquote ol {
+	line-height: normal;
+	font-style: italic;
+}
+
+a {
+	color:#993399;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+img { border: none; }
+
+/* Header */
+
+#header {
+	width: 830px;
+	height: 280px;
+	margin: 0 auto;
+	
+}
+
+/* Logo */
+
+#logo {
+	height: 170px;
+	
+}
+
+#logo h1 {
+	float: left;
+	padding: 40px 40px 0 50px;
+	letter-spacing: -2px;
+	font-size: 48px;
+}
+
+#logo h2 {
+	float: right;
+	padding: 68px 0 0 0;
+	font-size: 24px;
+	
+}
+
+#logo a {
+	text-decoration: none;
+	color:#9900FFs;
+}
+
+/* Gallery */
+
+#gallery {
+
+	clear: both;
+	width: 830px;
+	height: 300px;
+	margin: 0 auto;
+	overflow:hidden;
+	
+}
+
+#top-photo h2 {
+	height: 1.4em;
+	font-size: 1em;
+	overflow:hidden;
+}
+
+#top-photo p {
+	margin: 0;
+	padding: 0 0 10px 0;
+	overflow:hidden;
+}
+
+/* Menu */
+
+#menu {
+	width: 830px;
+	height: 70px;
+	
+
+}
+
+#menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#menu li {
+	display: inline;
+}
+
+#menu a {
+	display: block;
+	float: left;
+	width: 166px;
+	height: 73px;
+	padding-top: 35px;
+	text-transform: lowercase;
+	text-decoration: none;
+	text-align: center;
+	letter-spacing: -1px;
+	font-size: 24px;
+	color:#990033;
+}
+
+#menu a:hover {
+	
+	color:#990033;
+}
+
+#menu .active a {
+	
+	color:#990033;
+}
+
+/* Page */
+
+#page {
+	width: 830px;
+	margin: 0 auto;
+	padding: 20px 0;
+}
+
+/* Content */
+
+#content {
+	float: left;
+	width: 532px;
+}
+
+.post {
+	padding: 0 0 20px 0;
+}
+
+.title {
+	margin: 0;
+	border-bottom: 2px solid #000033;
+}
+
+.byline {
+	margin: 0;
+}
+
+.meta {
+	border-top: 1px solid #4A3903;
+	text-align: right;
+	color:#33FF33;
+}
+
+.meta a {
+	padding-left: 15px;
+	font-weight: bold;
+}
+
+/* Sidebar */
+
+#sidebar {
+	float: right;
+	width: 240px;
+}
+
+#sidebar ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#sidebar li {
+}
+
+#sidebar li ul {
+	padding: 15px 0;
+}
+
+#sidebar li li {
+	padding-left: 30px;
+	border-bottom: 1px dotted #4A3903;
+	
+}
+
+#sidebar h2 {
+	margin: 0;
+	padding: 20px 0 2px 30px;
+	
+	border-bottom: 2px solid #000000;
+}
+
+#sidebar a {
+	text-decoration: none;
+}
+
+#sidebar a:hover {
+	text-decoration: underline;
+}
+
+/* Footer */
+
+#footer {
+	clear: both;
+	padding: 20px 0;
+	background:#9966FF;
+	border-top: 3px solid #E8AD35;
+	text-align: center;
+	font-size: smaller;
+	color:#990000;
+}
+
+#footer a {
+	color:#000000;
+}

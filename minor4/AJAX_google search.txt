@@ -1,0 +1,25 @@
+
+<script type="text/javascript" src="google.js"></script>  
+
+<link href="google.css" rel="stylesheet" type="text/css" media="all" />
+
+
+
+
+
+
+<form action="https://www.google.co.in/imghp?q=en&sitesearch=ii" method="get">
+
+	<input type="search" id="search-box" name="q" results="5" placeholder="Search..." autocomplete="on" />
+
+	<input type="hidden" name="sitesearch"  value="" />
+	<!-- SEARCH BUTTON -->
+	<input id="search-submit" type="submit" value="Search"  />
+</form>
+
+<!-- ASYNCHRONOUSLY LOAD THE AJAX SEARCH API;  MOOTOOLS TOO! -->
+<script type="text/javascript" src="http://www.google.com/jsapi?key=MY_REALLY_REALLY_REALLY_REALLY_REALLY_REALLY_LONG_KEY"></script>
+<script type="text/javascript">
+	google.load('mootools','1.2.4');
+	google.load('search','1');
+</script>

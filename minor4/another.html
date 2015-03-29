@@ -1,0 +1,142 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  dir="ltr">
+<head>
+
+<style type="text/css"> 
+/* results positioning */
+#search-results	{
+ position:absolute;
+ z-index:90; top:40px; left:10px; visibility:hidden;
+ }
+/* triangle! */
+#search-results-pointer {
+ width:0px; height:0px; border-left:20px solid transparent;
+ border-right:20px solid transparent;
+ border-bottom:20px solid #eee; 
+ margin-left:10%; }
+/* content DIV which holds search results! */
+#search-results-content { position:relative; padding:20px; background:#fff; border:3px solid #eee; width:380px; min-height:200px; -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5) }
+</style>
+
+</head>
+
+<div id="content">
+<div class="center"> 	
+
+	<div id="content-left"> 
+
+	<!-- SEARCH FORM -->
+	<form action="http://www.google.com/search" method="get">
+		<!-- HTML5 SEARCH BOX!  -->
+		<input type="search" id="search-box" name="q" results="5" placeholder="Search..." autocomplete="off" />
+		<!-- SEARCH byman.it ONLY! -->
+		<input type="hidden" name="sitesearch" value="byman.it" />
+		<!-- SEARCH BUTTON -->
+		<input id="search-submit" type="submit" value="Search" />	
+	</form>
+	<div id="search-area" style="position:relative;">	
+	</div> 
+	
+	</div>
+	<!-- end Left right -->
+
+	<!-- right -->
+	<div id="content-right"> 	
+	</div> 
+
+</div>
+</div> 
+<!-- Fine Center-Content -->
+
+<!-- ASYNCHRONOUSLY LOAD THE AJAX SEARCH API;  MOOTOOLS TOO! -->
+<script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAvvbgB1Zts4DoSq69a0elsBT2RN6ma1qPgh7hA7S-soq3zlPoeRRCIML6nHhGrYWNoVBPhVa6Aj1lZA"></script> 
+
+
+<script type="text/javascript">
+	google.load('mootools','1.2.4');
+	google.load('search','1');
+</script>
+	
+    
+    
+<script type="text/javascript">	
+
+window.addEvent('domready',function(){
+
+	/* search */
+	var searchBox = $('search-box'), searchLoaded=false, searchFn = function() {
+		/*
+			We're lazyloading all of the search stuff.
+			After all, why create elements, add listeners, etc. if the user never gets there?
+		*/
+		if(!searchLoaded) {
+			searchLoaded = true; //set searchLoaded to "true"; no more loading!			
+			//build elements!
+			var container = new Element('div',{ id: 'search-results' }).inject($('search-area'),'after');
+			var wrapper = new Element('div',{
+				styles: {
+					position: 'relative'
+				}
+			}).inject(container);
+			new Element('div',{ id: 'search-results-pointer' }).inject(wrapper);
+			var contentContainer = new Element('div',{ id: 'search-results-content' }).inject(wrapper);
+			var closer = new Element('a', {
+				href: 'javascript:;',
+				text: 'Close',
+				styles: {
+					position: 'absolute', //position the "Close" link
+					bottom: 35,
+					right: 20
+				},
+				events: {
+					click: function() {
+						container.fade(0);
+					}
+				}
+			}).inject(wrapper);
+
+			//google interaction
+			var search = new google.search.WebSearch(),
+				control = new google.search.SearchControl(),
+				options = new google.search.DrawOptions();
+
+			//set google options
+			options.setDrawMode(google.search.SearchControl.DRAW_MODE_TABBED);
+			options.setInput(searchBox);
+			
+			//set search options
+			search.setUserDefinedClassSuffix('siteSearch');
+			search.setSiteRestriction('google.com');
+			search.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+			
+			//set search controls
+			control.addSearcher(search);
+			control.draw(contentContainer,options);
+			control.setNoResultsString('No results were found.');
+
+			//add listeners to search box
+			searchBox.addEvents({
+				keyup: function(e) {
+					if(searchBox.value && searchBox.value != searchBox.get('placeholder')) {
+						container.fade(0.9);
+						control.execute(searchBox.value);
+					}
+					else {
+						container.fade(0);
+					}
+				}
+			});
+			searchBox.removeEvent('focus',searchFn);
+		}
+	};
+	
+	searchBox.addEvent('focus',searchFn);
+	
+});
+
+</script>
+
+
+</body>
+</html>

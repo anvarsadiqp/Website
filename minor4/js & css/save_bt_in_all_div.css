@@ -1,0 +1,94 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+	body {		
+		font-family: Helvetica,Arial,sans-serif;
+		color:#333333;
+		font-size:13px;
+	}
+	
+    h1{
+		font-family: 'Droid Serif', Georgia, Times, serif;
+		font-size: 28px;		
+	}
+	
+	a{
+		color: #0071D8;
+		text-decoration:none;
+	}
+	
+	a:hover{
+		text-decoration:underline;
+	}
+
+	:focus {
+		outline: 0;
+	}
+	
+	#wrap{
+		width: 500px;
+		margin:0 auto;				
+		overflow:auto;		
+	}
+	
+	#content{
+		background: #f7f7f7;
+		border-radius: 10px;
+	}
+	
+	#editable {		
+		padding: 10px;		
+	}
+	
+	#status{
+		display:none; 
+		margin-bottom:15px; 
+		padding:5px 10px; 
+		border-radius:5px;
+	}
+	
+	.success{
+		background: #B6D96C;
+	}
+	
+	.error{
+		background: #ffc5cf; 
+	}
+	
+	#footer{
+		margin-top:15px;
+		text-align: center;
+	}
+	
+	#save{	
+		display: none;
+		margin: 5px 10px 10px;		
+		outline: none;
+		cursor: pointer;	
+		text-align: center;
+		text-decoration: none;
+		font: 12px/100% Arial, Helvetica, sans-serif;
+		font-weight:700;	
+		padding: 5px 10px;	
+		-webkit-border-radius: 5px; 
+		-moz-border-radius: 5px;
+		border-radius: 5px;	
+		color: #606060;
+		border: solid 1px #b7b7b7;	
+		background: #fff;
+		background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
+		background: -moz-linear-gradient(top,  #fff,  #ededed);
+		filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed');
+	}	
+	
+	#save:hover
+	{
+        background: #ededed;
+		background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#dcdcdc));
+		background: -moz-linear-gradient(top,  #fff,  #dcdcdc);
+		filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#dcdcdc');
+	}
+	
+   
+
